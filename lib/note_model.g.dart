@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'note_model.dart';
+part of 'models/note_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

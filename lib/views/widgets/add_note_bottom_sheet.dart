@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:notes/widgets/custom_button.dart';
-import 'package:notes/widgets/custom_text_field.dart';
+
+import 'custom_button.dart';
+import 'custom_text_field.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -16,7 +17,7 @@ class AddNoteBottomSheet extends StatelessWidget {
             CustomTextField(hint: 'Title'),
             SizedBox(height: 20),
             CustomTextField(hint: 'Content', maxLines: 5),
-            SizedBox(height: 32,),
+            SizedBox(height: 50,),
             CustomButton(),
             SizedBox(height: 20),
           ],
