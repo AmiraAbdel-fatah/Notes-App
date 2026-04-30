@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomIconSearch extends StatelessWidget {
-  const CustomIconSearch({
+class CustomIcon extends StatelessWidget {
+  const CustomIcon({
     super.key,
     required this.icon,
     void Function()? onPressed,
-  })final IconData icon;
+  });
+
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(

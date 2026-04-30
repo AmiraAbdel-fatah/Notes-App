@@ -14,9 +14,7 @@ class EditNoteViewBody extends StatefulWidget {
 }
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
-
-
-  final String? title, content;
+  String? title, content;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +23,33 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
       child: Column(
         children: [
           SizedBox(height: 50),
-          CustomAppBar(title: 'Edit Note', icon: Icons.check,
+          CustomAppBar(
+            title: 'Edit Note',
+            icon: Icons.check,
             onPressed: () {
-
-            },),
+              widget.note.title = title ?? widget.note.title;
+              widget.note.subtitle = content ?? widget.note.subtitle;
+              widget.note.save();
+              setState(() {});
+              Navigator.pop(context);
+            },
+          ),
           SizedBox(height: 50),
 
-          CustomTextField(hint: "Title"),
-          SizedBox(height: 20,),
-          CustomTextField(hint: "Content", maxLines: 5,)
+          CustomTextField(
+            onChanged: (value) {
+              title = value;
+            },
+            hint: "Title",
+          ),
+          SizedBox(height: 20),
+          CustomTextField(
+            onChanged: (value) {
+              content = value;
+            },
+            hint: "Content",
+            maxLines: 5,
+          ),
         ],
       ),
     );
